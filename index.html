@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoInformática</title>
+    <style>
+        body {
+            background-color: #0a0f1c; /* Fondo oscuro tipo terminal/tech */
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%); /* Gradiente tecno */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1.5rem;
+            color: #a0aec0;
+            margin-top: 0;
+        }
+         h3 {
+            font-size: 1.0rem;
+            color: #a0aec0;
+            margin-top: 0;
+        }
+        .status {
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #2d3748;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        /* Animación sutil de parpadeo */
+        .blink {
+            animation: blinker 1.5s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>NeoInformática</h1>
+        <p>Desarrollo Web - Ciberseguridad - IA - Capacitación - Redes</p>
+        
+        <div class="status">
+            <span class="blink">●</span> Sitio en Construcción
+            
+        </div>
+        <br>
+        <h3>contacto : admin@neoinformatica.cl - 2025</h3>
+    </div>
+</body>
+</html>

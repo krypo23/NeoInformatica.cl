@@ -3,69 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoInformática</title>
-    <style>
-        body {
-            background-color: #0a0f1c; /* Fondo oscuro tipo terminal/tech */
-            color: #ffffff;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%); /* Gradiente tecno */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p {
-            font-size: 1.5rem;
-            color: #a0aec0;
-            margin-top: 0;
-        }
-         h3 {
-            font-size: 1.0rem;
-            color: #a0aec0;
-            margin-top: 0;
-        }
-        .status {
-            margin-top: 2rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid #2d3748;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: #718096;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        /* Animación sutil de parpadeo */
-        .blink {
-            animation: blinker 1.5s linear infinite;
-        }
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
-    </style>
+    <title>NeoInformática | Ingeniería y Tecnología</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div>
-        <h1>NeoInformática</h1>
-        <p>Desarrollo Web - Ciberseguridad - IA - Capacitación - Redes</p>
+
+    <header>
+        <div class="logo">Neo<span>Informática</span></div>
         
-        <div class="status">
-            <span class="blink">●</span> Sitio en Construcción
-            
+        <button class="menu-toggle" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#catalogo">Equipos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ingeniería, Ciberseguridad &<br>Tecnología Avanzada</h1>
+            <p>Soluciones integrales para empresas y venta de equipamiento profesional. Respaldo de NeoInformática SpA.</p>
+            <a href="#catalogo" class="btn">Ver Catálogo</a>
         </div>
-        <br>
-        <h3>contacto : admin@neoinformatica.cl - 2025</h3>
-    </div>
+    </section>
+
+    <section id="servicios">
+        <h2 class="section-title">Nuestras Soluciones</h2>
+        <div class="grid-servicios">
+            <div class="card">
+                <div class="icon">🛡️</div>
+                <h3>Ciberseguridad</h3>
+                <p>Pentesting, auditoría de redes y protección de datos críticos. Seguridad defensiva para tu negocio.</p>
+            </div>
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Desarrollo de Software</h3>
+                <p>Aplicaciones web a medida, integraciones API y soluciones Cloud escalables.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📡</div>
+                <h3>Redes & Soporte</h3>
+                <p>Infraestructura de redes, servidores y continuidad operativa para empresas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo">
+        <h2 class="section-title">Venta de Equipos</h2>
+        <p class="subtitle">Equipos seleccionados y configurados por ingenieros expertos.</p>
+        
+        <div class="grid-productos">
+            
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="img/notebook-ejemplo.jpg" alt="Notebook Lenovo" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>SIN IMAGEN</span>'">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Notebook Profesional</span>
+                    <h3>Lenovo ThinkPad E14</h3>
+                    <ul class="specs">
+                        <li>• CPU: Intel Core i7 12va</li>
+                        <li>• RAM: 16GB DDR4</li>
+                        <li>• SSD: 512GB NVMe</li>
+                    </ul>
+                    <div class="product-price">$850.000 + IVA</div>
+                    <a href="https://wa.me/569XXXXXXXX?text=Hola, me interesa el Lenovo ThinkPad E14" target="_blank" class="btn-buy">
+                        Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                     <img src="img/pc-gamer.jpg" alt="PC Gamer" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>SIN IMAGEN</span>'">
+                </div>
+                <div class="product-info">
+                    <span class="product-tag">Workstation</span>
+                    <h3>PC Armado Neo-Pro</h3>
+                    <ul class="specs">
+                        <li>• CPU: AMD Ryzen 7 5700G</li>
+                        <li>• RAM: 32GB 3200Mhz</li>
+                        <li>• SSD: 1TB NVMe</li>
+                    </ul>
+                    <div class="product-price">$690.000 + IVA</div>
+                    <a href="https://wa.me/569XXXXXXXX?text=Hola, me interesa el PC Armado Neo-Pro" target="_blank" class="btn-buy">
+                        Consultar / Comprar
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="contact-section">
+        <h2 class="section-title">Contáctanos</h2>
+        <p>¿Tienes un proyecto o necesitas una cotización formal?</p>
+        <div class="contact-buttons">
+            <a href="mailto:contacto@neoinformatica.cl" class="btn">Enviar Correo</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> NeoInformática SpA. Todos los derechos reservados.</p>
+        <p>Chillán, Región de Ñuble.</p>
+    </footer>
+
+    <script src="assets/css/style.css"></script>
 </body>
 </html>

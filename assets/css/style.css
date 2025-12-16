@@ -47,30 +47,75 @@ nav a:hover { color: var(--primary); }
 .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
 /* --- HERO SECTION --- */
+/* --- HERO SECTION CON IMAGEN DE FONDO --- */
 .hero {
     text-align: center;
-    padding: 120px 20px;
-    background: radial-gradient(circle at center, #1a202c 0%, #0b0f19 70%);
+    /* Aumentamos un poco el padding vertical para que se aprecie más la imagen */
+    padding: 180px 20px;
+    position: relative; /* Vital para poder posicionar la imagen de fondo detrás */
+    overflow: hidden; /* Asegura que nada se salga del contenedor */
+    /* Eliminamos el background: radial-gradient anterior */
 }
+
+/* Usamos el pseudo-elemento ::before para crear el fondo.
+   Esto permite poner una capa oscura sobre la imagen sin afectar al texto. */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Se coloca detrás del contenido de texto */
+
+    /* AQUÍ ESTÁ LA MAGIA:
+       Primero un gradiente oscuro semitransparente (rgba)
+       Segundo la URL de tu imagen.
+       Si no pones la capa oscura, el texto blanco no se leerá bien. */
+    background-image:
+        linear-gradient(to bottom, rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.7)),
+        url('/assets/img/hero.jpg'); /* <--- ASEGÚRATE QUE ESTA RUTA SEA CORRECTA */
+
+    background-size: cover;   /* La imagen cubre todo el área sin estirarse */
+    background-position: center center; /* La imagen se centra */
+    background-repeat: no-repeat;
+
+    /* Opcional: Un ligero desenfoque para dar profundidad y que el texto resalte más */
+    /* filter: blur(3px); transform: scale(1.02); */
+}
+
+/* Esto asegura que el texto y los botones queden POR ENCIMA de la imagen */
+.hero-content {
+    position: relative;
+    z-index: 1; /* Mayor que el z-index del ::before */
+}
+
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
+    /* Mantenemos el gradiente de texto, pero añadimos sombra para contraste */
     background: linear-gradient(90deg, #fff, #a0aec0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.1;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5); /* Sombra para leer mejor sobre neón */
 }
-.hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; }
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    /* Hacemos el texto un poco más brillante para que destaque sobre el fondo */
+    color: #e2e8f0;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
 
-.btn {
-    background: var(--primary);
-    color: #0b0f19;
-    padding: 12px 30px;
-    border-radius: 5px;
-    font-weight: 700;
-    display: inline-block;
-    transition: all 0.2s;
+/* Ajuste para móvil */
+@media (max-width: 768px) {
+    .hero { padding: 120px 20px; } /* Menos altura en móvil */
+    .hero h1 { font-size: 2.5rem; }
 }
+
 .btn:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(0, 242, 234, 0.3); }
 
 /* --- SECCIONES GENERAL --- */
